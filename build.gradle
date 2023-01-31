@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.2'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.chukwuma'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    implementation group: 'io.projectreactor.netty', name: 'reactor-netty', version: '1.1.2'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+    implementation group: 'org.springframework', name: 'spring-messaging', version: '6.0.4'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
